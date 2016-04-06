@@ -1,0 +1,6 @@
+\BOOKMARK [0][-]{chapter.1}{Static contact problem}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Semismooth Newton method}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{One degree-of-freedom contact problem}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.3}{Semismooth reformulation}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.4}{Penalty treatment}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.5}{Augmented Lagrange treatment and Uzawa algorithm}{chapter.1}% 6

@@ -1,0 +1,106 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{newfloat}
+\DeclareFloatingEnvironment[fileext=los,listname=List of Algorithms,name=Algorithm,placement=ht,within=chapter]{algo}
+%\usepackage[font={sf,small},labelfont=bf]{caption}
+%\captionsetup[figure]{position=above}
+\setlength{\intextsep}{15pt plus 3pt minus 2pt}
+%\setlength{\floatsep}{5pt plus 3pt minus 2pt}
+%\setlength{\textfloatsep}{5pt plus 3pt minus 2pt}
+\newsavebox{\coloredbgbox}%
+\newenvironment{algobox}%
+  {\begin{lrbox}{\coloredbgbox}\begin{minipage}[t]{\textwidth-2\fboxsep-2\fboxrule}\small}%
+  {\end{minipage}\end{lrbox}%
+   \centering\colorbox{blue!75!black!8}{\usebox{\coloredbgbox}}}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% fancyhdr parameters
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{\sc\thechapter. #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\hspace{5pt}#1}{}}
+\fancyhf{}
+\fancyhead[LE,RO]{\normalfont\normalsize\bfseries\thepage}
+\fancyhead[LO]{\rightmark}
+\fancyhead[RE]{\leftmark}
+\renewcommand{\headrulewidth}{0.5pt}
+\addtolength{\headheight}{2.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancypagestyle{plain}{\fancyhead{}\renewcommand{\headrulewidth}{0pt}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand*\D{\mathop{}\!\mathrm{d}}
+%\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand{\rem}{\textcolor{red}}
+\newcommand{\Disp}{\displaystyle}
+\newcommand{\expp}{\mathrm{e}}
+\newcommand{\vx}{\mathbf{x}}
+\newcommand{\vu}{\mathbf{u}}
+\newcommand{\vy}{\mathbf{y}}
+\newcommand{\vf}{\mathbf{f}}
+\newcommand{\mA}{\mathbf{A}}
+\newcommand{\fl}{\mathrm{fl}}
+\newcommand{\Cont}{\mathcal{C}^0} % C^0 continuity
+\newcommand{\ContC}{\mathcal{C}^1} % C^1 continuity
+\newcommand{\ContCC}{\mathcal{C}^2} % C^2 continuity
+\newcommand{\Contn}{\mathcal{C}^n} % C^n continuity
+\newcommand{\base}{\mathsf{b}}
+\DeclareMathOperator{\odivide}{\kern.5pt\ominus\kern-9.2pt\div\kern.5pt}
+\DeclareMathOperator{\bmax}{\mathbf{max}}
+\DeclareMathOperator{\bdiv}{\mathbf{div}}
+\DeclareMathOperator*{\argmin}{arg\,min}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\bigO}{O} % big O
+%\newcommand{\bigO}{\mathscr{O}} % big O
+%\newcommand{\nsubset}{\not\subset}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\inteoo}[2]{\mathopen{(}#1\,;#2\mathclose{)}}
+\newcommand{\inteff}[2]{\mathopen{[}#1\,;#2\mathclose{]}}
+\newcommand{\inteof}[2]{\mathopen{(}#1\,;#2\mathclose{]}}
+\newcommand{\intefo}[2]{\mathopen{[}#1\,;#2\mathclose{)}}
+\newcommand{\intg}[2]{\mathopen{(}#1\,;#2\mathclose{)}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{listings}
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+\definecolor{mycolor1}{rgb}{0.00000,0.44700,0.74100}%
+\definecolor{mycolor2}{rgb}{0.85000,0.32500,0.09800}%
+\definecolor{mycolor4}{rgb}{0.49400,0.18400,0.55600}%
+\definecolor{mycolor3}{rgb}{0.9290    ,0.6940    ,0.1250}
+\DeclareRobustCommand{\colorlineA}{\tikz[baseline=-\the\dimexpr\fontdimen22\textfont2\relax,inner sep=0pt]\draw[mycolor1,solid,line width=1pt](0,0) -- (5mm,0);}
+\DeclareRobustCommand{\colorlineB}{\tikz[baseline=-\the\dimexpr\fontdimen22\textfont2\relax,inner sep=0pt]\draw[mycolor2,solid,line width=1pt](0,0) -- (5mm,0);}
+\DeclareRobustCommand{\colorlineC}{\tikz[baseline=-\the\dimexpr\fontdimen22\textfont2\relax,inner sep=0pt]\draw[mycolor3,solid,line width=1pt](0,0) -- (5mm,0);}
+\DeclareRobustCommand{\colorADashed}{\tikz[baseline=-\the\dimexpr\fontdimen22\textfont2\relax,inner sep=0pt]\draw[mycolor1,dashed,line width=1pt](0,0) -- (5mm,0);}
+\DeclareRobustCommand{\colorBDashed}{\tikz[baseline=-\the\dimexpr\fontdimen22\textfont2\relax,inner sep=0pt]\draw[mycolor2,dashed,line width=1pt](0,0) -- (5mm,0);}
+\DeclareRobustCommand{\colorCDashed}{\tikz[baseline=-\the\dimexpr\fontdimen22\textfont2\relax,inner sep=0pt]\draw[mycolor3,dashed,line width=1pt](0,0) -- (5mm,0);}
+\DeclareRobustCommand{\colorDDashed}{\tikz[baseline=-\the\dimexpr\fontdimen22\textfont2\relax,inner sep=0pt]\draw[mycolor4,dashed,line width=1pt](0,0) -- (5mm,0);}
+\DeclareRobustCommand{\blackSolid}{\tikz[baseline=-\the\dimexpr\fontdimen22\textfont2\relax,inner sep=0pt]\draw[black,solid,line width=1pt](0,0) -- (5mm,0);}
+\DeclareRobustCommand{\blackDashed}{\tikz[baseline=-\the\dimexpr\fontdimen22\textfont2\relax,inner sep=0pt]\draw[black,dashed,line width=1pt](0,0) -- (5mm,0);}
+\DeclareRobustCommand{\blackDashdotted}{\tikz[baseline=-\the\dimexpr\fontdimen22\textfont2\relax,inner sep=0pt]\draw[black,dashdotted,line width=1pt](0,0) -- (5mm,0);}
+\DeclareRobustCommand{\colorlineDashedBlack}{\tikz[baseline=-\the\dimexpr\fontdimen22\textfont2\relax,inner sep=0pt]\draw[black,dashed,line width=1pt](0,0) -- (5mm,0);}
+\DeclareRobustCommand{\colorlineBDashed}{\tikz[baseline=-\the\dimexpr\fontdimen22\textfont2\relax,inner sep=0pt]\draw[mycolor2,dashed,line width=1pt](0,0) -- (5mm,0);}
+
+
+\lstset{language=matlab,%
+    %%%%%%%%%%%%%%%%%%%basicstyle=\color{red},
+    breaklines=true,%
+    morekeywords={matlab2tikz},
+    keywordstyle=\color{blue},%
+    morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+    identifierstyle=\color{black},%
+    stringstyle=\color{mylilas},
+    commentstyle=\color{mygreen},%
+    showstringspaces=false,%without this there will be a symbol in the places where there is a space
+    numbers=left,%
+    numberstyle={\tiny \color{black}},% size of the numbers
+    numbersep=9pt, % this defines how far the numbers are from the text
+    %emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
+    %%%%%%%%%%%%%%%emph=[2]{word1,word2}, emphstyle=[2]{style}, 
+    flexiblecolumns=true,
+	stringstyle=\ttfamily\footnotesize, % typewriter type for strings
+	basicstyle=\ttfamily\footnotesize, % typewriter type for strings
+	frame=single,
+	backgroundcolor=\color{blue!75!black!8},
+	rulecolor=\color{blue!50},
+	framesep=0pt,
+	rulesep=0pt,
+	framerule=0pt,
+	framexleftmargin=0pt,
+}
